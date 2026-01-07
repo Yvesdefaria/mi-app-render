@@ -2,11 +2,14 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-  res.send('Aplicación funcionando correctamente');
+  console.log(`[INFO] GET / recibido`);
+  res.send('¡Bienvenido a la app con monitorización!');
 });
 
 app.get('/health', (req, res) => {
-  res.status(200).json({ status: 'ok' });
+  console.log(`[INFO] GET /health recibido`);
+  res.json({ status: 'ok' });
 });
+
 
 module.exports = app;
