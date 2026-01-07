@@ -11,5 +11,11 @@ app.get('/health', (req, res) => {
   res.json({ status: 'ok' });
 });
 
+app.get('/fail', (req, res) => {
+  console.log('Este endpoint provocará un fallo');  
+  const x = ; // Error de sintaxis intencionado
+  res.send('Esto no se ejecutará');
+});
+
 
 module.exports = app;
